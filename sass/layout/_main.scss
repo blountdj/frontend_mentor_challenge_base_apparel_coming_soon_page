@@ -1,0 +1,147 @@
+.main {
+  position: relative;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 7rem 30rem 0 15rem; // top right bottom left
+    position: relative;
+  }
+  &__background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  &__logo {
+    margin-bottom: 10rem;
+  }
+
+  &__heading {
+    font-size: 7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.8rem;
+    line-height: 1.1;
+    margin-bottom: 3rem;
+
+    &--light {
+      color: $color-desaturated-red;
+      font-weight: 300;
+    }
+
+    &--bold {
+      color: $color-dark-grayish-red;
+    }
+  }
+
+  &__text {
+    line-height: 1.5;
+    color: $color-desaturated-red;
+    margin-bottom: 5rem;
+  }
+
+  &__inputs {
+    position: relative;
+    width: 100%;
+
+    &__error_icon {
+      position: absolute;
+      height: 3rem;
+      top: 9px;
+      right: 100px;
+      opacity: 0;
+    }
+
+    &__error {
+      position: absolute;
+      color: $color-soft-red;
+      bottom: -80px;
+      left: 18px;
+      opacity: 0;
+    }
+
+    &__success {
+      position: absolute;
+      color: $color-dark-grayish-red;
+      bottom: -80px;
+      left: 18px;
+      opacity: 0;
+    }
+  }
+
+  &__email {
+    position: absolute;
+    background-color: none;
+    top: 0;
+    left: 0;
+    padding: 1.5rem;
+    width: 95%;
+    border-radius: 2.5rem;
+    border: 1px solid $color-input-border;
+    color: $color-desaturated-red;
+
+    &:focus {
+      border: 1px solid $color-desaturated-red;
+      outline: none;
+    }
+  }
+
+  &__submit {
+    position: absolute;
+    top: -1px;
+    right: 0;
+    padding: 1.5rem;
+    border-radius: 2.5rem;
+    border: none;
+    width: 8rem;
+    background-image: linear-gradient(
+      135deg,
+      hsl(0, 80%, 86%),
+      hsl(0, 74%, 74%)
+    );
+    box-shadow: 0px 5px 15px 5px hsla(0, 74%, 74%, 0.299);
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      background-image: linear-gradient(
+        135deg,
+        hsl(0, 80%, 86%),
+        hsl(0, 80%, 86%)
+      );
+      transform: scale(1.04);
+    }
+
+    &:active {
+      outline: none;
+      border: none;
+    }
+
+    &:focus-visible {
+      outline: none;
+      border: none;
+    }
+
+    &:active {
+      outline: none;
+      border: none;
+    }
+  }
+}
+.main__inputs.error > .main__email {
+  border: 1px solid $color-soft-red;
+}
+
+.main__inputs.error > .main__inputs__error {
+  opacity: 1;
+}
+
+.main__inputs.error > .main__inputs__error_icon {
+  opacity: 1;
+}
+
+.main__inputs.success > .main__inputs__success {
+  opacity: 1;
+}
